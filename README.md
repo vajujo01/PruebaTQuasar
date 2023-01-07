@@ -6,3 +6,8 @@ Dentro de la carpeta api se encuentran los archivos necesarios para que se ejecu
   symfony server:start
   
 Con esto debería ser suficiente para acceder a la carpera unity y ejecutar el archivo exe.
+
+
+/////
+
+Se ha instalado composer, doctrine, monolog, sensio
