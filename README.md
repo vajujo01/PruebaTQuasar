@@ -1,6 +1,6 @@
 # Prueba Técnica Unity Quasar
 
-## Para ejecutar la prueba técnica:
+## :satellite: Para ejecutar la prueba técnica:
 
 Dentro de la carpeta "api" se encuentran los archivos necesarios para que se ejecute el código de Symfony, habría que acceder a su interior y usar el comando:
 
@@ -13,7 +13,7 @@ Ahora sería necesario acceder a la carpeta "unity" y ejecutar el archivo exe.
 
 ![Captura de pantalla 2023-01-07 151743](https://user-images.githubusercontent.com/76244023/211155198-9fdefeba-9cbe-4833-8d81-b069ac47ddd4.png)
 
-## Proceso seguido
+## :memo: Proceso seguido
 
 1. Aprendizaje básico de Symfony.
 2. Creación de un proyecto Symfony mediante la terminal y desarrollo de la API.
@@ -50,6 +50,6 @@ Ahora sería necesario acceder a la carpeta "unity" y ejecutar el archivo exe.
       * Uno global para pasar la variable del nombre del usuario a la escena del entorno 3D.
       * Uno para añadir la variable global al texto del jugador.
 
-## Archivos de códigos creados
+## :computer: Archivos de códigos creados
 
 Podéis acceder al código que he generado directamente desde la carpeta code, este está dividido entre el código de la API y el código de Unity (no añado el del personaje ya que viene por defecto con la plantilla en la creación).
