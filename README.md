@@ -7,7 +7,7 @@ Dentro de la carpeta "api" se encuentran los archivos necesarios para que se eje
 ```
 symfony server:start
 ```
-Con esto debería ser suficiente para iniciar el servidor y poder realizar las llamadas API necesarias desde el ejecutable de Unity, aunque es posible que sea necesario instalar algunos de los componentes que se listan en el proceso.
+Con esto debería ser suficiente para iniciar el servidor y poder realizar las llamadas API necesarias desde el ejecutable de Unity, aunque es posible que sea necesario instalar algunos de los componentes que se listan en el proceso a continuación.
 
 Ahora sería necesario acceder a la carpeta "unity" y ejecutar el archivo exe.
 
