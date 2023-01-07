@@ -15,7 +15,6 @@ class Api_Controller extends AbstractController
     private $logger;
     private HttpClientInterface $client;
     private $access_token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRlaHVmbnp1bW1wdG9ocWNreXNsIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzI3NzY0NjgsImV4cCI6MTk4ODM1MjQ2OH0.v6KWTdohNlFyuQOnj-E12wLO5CgazSlO4gYPp8SciZU';
-    private $apikey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRlaHVmbnp1bW1wdG9ocWNreXNsIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzI3NzY0NjgsImV4cCI6MTk4ODM1MjQ2OH0.v6KWTdohNlFyuQOnj-E12wLO5CgazSlO4gYPp8SciZU';
 
     public function __construct(LoggerInterface $logger, HttpClientInterface $client)
     {
@@ -49,11 +48,12 @@ class Api_Controller extends AbstractController
        else
        {
             //Call to the database to get the user info
-            $url = 'https://dehufnzummptohqckysl.supabase.co/rest/v1/Usuarios?correo=eq.'.urlencode($email).'&select=*';
+            $url = $_ENV['DATABASE_URL_'].'?correo=eq.'.urlencode($email).'&select=*';
+            //$url = 'https://dehufnzummptohqckysl.supabase.co/rest/v1/Usuarios?correo=eq.'.urlencode($email).'&select=*';
 
             $get_response = $this->client->request('GET', $url,[
                 'headers' => [
-                    'apikey' => $this->apikey,
+                    'apikey' => $this->access_token,
                     'Authorization' => 'Bearer '.$this->access_token
                 ]]);
             $get_user_response = $get_response->toArray();
@@ -129,7 +129,7 @@ class Api_Controller extends AbstractController
             //Call to the database to create new user
             //We set that email address are unique (on database) so we can't create more than one record with same email
 
-            $url = 'https://dehufnzummptohqckysl.supabase.co/rest/v1/Usuarios';
+            $url = $_ENV['DATABASE_URL_'];
 
             $json = [
                 'nombre' => $name,
@@ -140,7 +140,7 @@ class Api_Controller extends AbstractController
 
             $post_response = $this->client->request('POST', $url,[
                 'headers' => [
-                    'apikey' => $this->apikey,
+                    'apikey' => $this->access_token,
                     'Authorization' => 'Bearer '.$this->access_token
                 ],
                 'json' => $json
